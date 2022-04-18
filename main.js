@@ -73,7 +73,7 @@ const output = document.querySelector('.output');
 
 
 window.addEventListener('DOMContentLoaded', loadTable);
-//search.addEventListener('input', filterTable);
+search.addEventListener('input', filter);
 
 
 //fuction to load table
@@ -98,4 +98,22 @@ function loadTable() {
     temp += '</table>';
     output.innerHTML = temp;
 
+}
+
+//filter function
+
+function filter(e) {
+    let results;
+    let temp = "";
+
+    results = table.filter(item =>
+        item.state.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        item.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        item.city.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        item.occupation.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        item.age.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    //console.log(results);
+
+    //display funsctio
 }

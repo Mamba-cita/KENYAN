@@ -114,4 +114,6 @@ function filter(e) {
         item.age.toLowerCase().includes(e.target.value.toLowerCase())
     );
     //console.log(results);
+
+    //display funsctio
 }

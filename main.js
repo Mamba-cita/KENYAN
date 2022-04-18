@@ -115,5 +115,24 @@ function filter(e) {
     );
     //console.log(results);
 
-    //display funsctio
+    //display funsction
+    if (results.length > 0) {
+        temp += '<table><tr>';
+        tableHeader.forEach(header => temp += `<th>${header.toUpperCase()}</th>`);
+        temp += '</tr>';
+        results.forEach(row => {
+            temp += `
+    <tr>
+    <td>${row.name}</td>
+    <td>${row.age}</td>
+    <td>${row.occupation}</td>
+    <td>${row.city}</td>
+    <td>${row.state}</td>
+
+    </tr>
+    `
+        });
+        temp += '</table>';
+        output.innerHTML = temp;
+    }
 }
